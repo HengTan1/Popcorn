@@ -8,9 +8,6 @@
 ## OMDB API Link
   - http://www.omdbapi.com/
 
-## Bootstrap Introduction
-  - https://getbootstrap.com/docs/5.1/getting-started/introduction/#css
-
 ## API Key Handling
   - https://www.youtube.com/watch?v=YdgIWTYQ69A How to create a .env so we keep API keys off Github repo. Will be needed in popcorn_api.py
 

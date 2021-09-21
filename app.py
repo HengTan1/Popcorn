@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, request
 from flask import session
 from flask import redirect
 import popcorn_api
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_manager
 from sqlalchemy import create_engine
 from flask import g
@@ -62,5 +62,7 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('profile.html')
+
+app.run()
 
 #Should just need to do "flask run" in cmd to get this to run on local host "127.0.0.1:5000"

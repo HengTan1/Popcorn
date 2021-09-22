@@ -1,5 +1,6 @@
 .env
 convert.txt
+.vscode\launch.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

@@ -1,5 +1,6 @@
 .env
 convert.txt
+.vscode\launch.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -182,3 +183,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.vscode/launch.json

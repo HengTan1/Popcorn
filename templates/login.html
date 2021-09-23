@@ -1,17 +1,46 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Popcorn</title>
 
-{% block content %}
-    <h1>{% block title %} Popcorn {% endblock %}</h1>
-    <div class="form">
-        <form action="" method="post">
-          <input type="text" placeholder="Username" name="username" value="{{
-            request.form.username }}">
-           <input type="password" placeholder="Password" name="password" value="{{
-            request.form.password }}">
-          <input class="btn btn-default" type="submit" value="Login">
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="login-section">
+        <h1>
+          Welcome to Popcorn
+        </h1>
+        <form action="/login.py">
+          <div class="form-wrapper">
+            <div class="form-input">
+              <p>Username</p>
+              <input type="text" placeholder="username" />
+            </div>
+
+            <div class="form-input">
+              <p>Password</p>
+              <input
+                type="password"
+                minlength="8"
+                placeholder="password"
+                required
+              />
+              <button type="button" class="question-mark">?</button>
+            </div>
+          </div>
+
+          <div class="button-wrapper">
+            <button type="submit" class="btn">Login</button>
+            <a href="#" class="btn">Sign Up</a>
+          </div>
         </form>
-        {% if error %}
-          <p class="error">Error: {{ error }}
-        {% endif %}
       </div>
-{% endblock %}
+    </div>
+  </body>
+
+</html>

@@ -1,7 +1,7 @@
 import _sqlite3
 
 
-class Users:
+class users:
 
     connector = _sqlite3.connect("users.db")
     c = connector.cursor()

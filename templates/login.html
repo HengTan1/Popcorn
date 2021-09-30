@@ -6,17 +6,7 @@
     
     <title>Popcorn</title>
 
-{% block content %}
-    <h1>{% block title %} Popcorn {% endblock %}</h1>
-    <div class="form">
-        <form action="" method="post">
-          <input type="text" placeholder="Username" name="username" value="{{
-            request.form.username }}">
-           <input type="password" placeholder="Password" name="password" value="{{
-            request.form.password }}">
-          <input class="btn btn-default" type="submit" value="Login">
     <link rel="stylesheet" href="static/css/login.css"/>
-    <link rel="stylesheet" href="login.css" />
   </head>
 
   <body>
@@ -30,12 +20,6 @@
             <div class="form-input">
               <p>Username</p>
               <input type="text" placeholder="Username" name="username" value="{{request.form.username}}" />
-        <form action="/login.py">
-          <div class="form-wrapper">
-            <div class="form-input">
-              <p>Username</p>
-              <input type="text" placeholder="username" />
-            </div>
 
             <div class="form-input">
               <p>Password</p>

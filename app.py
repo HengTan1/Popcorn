@@ -30,7 +30,7 @@ users.append(User(id=4, username='Test4', password='password4'))
 
 @app.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('index.html')
 
 #Flask function that runs before each request.
 @app.before_request
@@ -67,8 +67,6 @@ def profile():
 
     return render_template('profile.html')
 
-<<<<<<< Updated upstream
-=======
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     session.pop('user_id', None)
@@ -80,8 +78,6 @@ def signup():
         session['user.id'] = create_user.id
         return (redirect(url_for('login')))
     return render_template('signup.html')
-
->>>>>>> Stashed changes
 app.run()
 
 #Should just need to do "flask run" in cmd to get this to run on local host "127.0.0.1:5000"

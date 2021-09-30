@@ -1,6 +1,101 @@
+<<<<<<< Updated upstream
 {% extends 'base.html' %}
 
 {% block content %}
     <h1>{% block title %} Welcome to Popcorn {% endblock %}</h1>
     <!-- Need login button to direct to login.html -->
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/css/home.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <div class="left-column">
+        <div class="login-btn-position">
+          <button class="circle-btn">
+            Login
+          </button>
+        </div>
+        <div class="top-hit-btn-position">
+          <button class="circle-btn">
+            Global Top Hits
+          </button>
+        </div>
+        <div class="worst-btn-position">
+          <button class="circle-btn" type="button">
+            Worst of All-Time
+          </button>
+        </div>
+      </div>
+
+      <div class="middle-column">
+        <div class="circle-container">
+          <h1>
+            Popcorn
+          </h1>
+          <div class="search-input">
+            <input type="text" placeholder="Enter something here" />
+            <button>
+              Search
+            </button>
+            <button class="search-btn" href="#">
+              Advance Search
+            </button>
+          </div>
+          <p>
+            Contact Us
+          </p>
+          <div class="contact">
+            <div class="contact-wrapper">
+              <img
+                class="cntct-img"
+                src="https://www.freepnglogos.com/uploads/instagram-logos-png-images-free-download-2.png"
+              />
+              <a></a>
+              <img
+                class="cntct-img"
+                src="https://www.freepnglogos.com/uploads/facebook-logo-14.png"
+              />
+              <a></a>
+              <img
+                class="cntct-img"
+                src="https://www.freepnglogos.com/uploads/linkedin-shiny-icon-logo-5.png"
+              />
+              <a></a>
+              <img
+                class="cntct-img"
+                src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-vector-download-0.png"
+              />
+              <a></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="west-btn-position">
+          <button class="circle-btn">
+            Best in Western
+          </button>
+        </div>
+        <div class="east-btn-position">
+          <button class="circle-btn">
+            Best in Eastern
+          </button>
+        </div>
+        <div class="rand-btn-position">
+          <button class="circle-btn">
+            Random Movies
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+>>>>>>> Stashed changes

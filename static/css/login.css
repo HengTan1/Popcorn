@@ -1,0 +1,101 @@
+body {
+    background: url("https://wallpaperaccess.com/full/1773903.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+  
+  form {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Comic Sans", cursive;
+    color: yellow;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    color: black;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px 20px;
+    line-height: 2;
+    
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    font-family: "Comic Sans", cursive;
+    background-color: #f3ec78;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-size: 100%;
+    background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+  
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-input {
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+  }
+  
+  .form-input p {
+    min-width: 100px;
+    margin: 0;
+  }
+  
+  .form-input input {
+    outline: none;
+    border: none;
+    border-radius: 5px; 
+    padding: 0 10px;
+  }
+  
+  .form-input .question-mark {
+    margin-left: 10px;
+    width: 36px;
+    border-radius: 50%;
+    outline: none;
+    border:none;
+  }
+  
+  .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 7px 20px;
+    background: white;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    text-decoration-line: none;
+    color: black;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Comic Sans', cursive;
+    margin: 0 20px;
+  }

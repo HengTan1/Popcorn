@@ -1,6 +1,6 @@
 import json
 import requests
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
 OMDB_API_KEY = os.getenv("OMDB_API_KEY")

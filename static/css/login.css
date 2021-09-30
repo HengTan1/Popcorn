@@ -41,8 +41,8 @@ body {
     background-color: #f3ec78;
     background-image: linear-gradient(45deg, #f3ec78, #af4261);
     background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
+    background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
   }
@@ -74,6 +74,7 @@ body {
     margin-left: 10px;
     width: 36px;
     border-radius: 50%;
+    outline: none;
     ourline: none;
     border:none;
   }
@@ -98,4 +99,6 @@ body {
     line-height: 1.5;
     font-family: 'Comic Sans', cursive;
     margin: 0 20px;
+  }
   ... (8 lines left)
+}

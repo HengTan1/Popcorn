@@ -1,6 +1,11 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Popcorn</title>
 
-<<<<<<< Updated upstream
 {% block content %}
     <h1>{% block title %} Popcorn {% endblock %}</h1>
     <div class="form">
@@ -10,8 +15,8 @@
            <input type="password" placeholder="Password" name="password" value="{{
             request.form.password }}">
           <input class="btn btn-default" type="submit" value="Login">
-=======
     <link rel="stylesheet" href="static/css/login.css"/>
+    <link rel="stylesheet" href="login.css" />
   </head>
 
   <body>
@@ -25,6 +30,11 @@
             <div class="form-input">
               <p>Username</p>
               <input type="text" placeholder="Username" name="username" value="{{request.form.username}}" />
+        <form action="/login.py">
+          <div class="form-wrapper">
+            <div class="form-input">
+              <p>Username</p>
+              <input type="text" placeholder="username" />
             </div>
 
             <div class="form-input">
@@ -35,6 +45,7 @@
                 placeholder="Password"
                 name="password"
                 value="{{request.form.password}}"
+                placeholder="password"
                 required
               />
               <button type="button" class="question-mark">?</button>
@@ -45,10 +56,9 @@
             <button type="submit" class="btn">Login</button>
             <a href="#" class="btn">Sign Up</a>
           </div>
->>>>>>> Stashed changes
         </form>
-        {% if error %}
-          <p class="error">Error: {{ error }}
-        {% endif %}
       </div>
-{% endblock %}
+    </div>
+  </body>
+
+</html>

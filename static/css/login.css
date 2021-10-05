@@ -75,7 +75,6 @@ body {
     width: 36px;
     border-radius: 50%;
     outline: none;
-    ourline: none;
     border:none;
   }
   
@@ -100,5 +99,3 @@ body {
     font-family: 'Comic Sans', cursive;
     margin: 0 20px;
   }
-  ... (8 lines left)
-}

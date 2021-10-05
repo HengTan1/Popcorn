@@ -88,7 +88,7 @@ class users:
         connector.close()
 
 # A series of test I ran just to make sure everything worked. Does not include everything i did.
-# create_table()
+# users.create_table()
 # user = Users.insert("DillonKooncey", "November21998")
 # user = Users.find("DillonKooncey", "November21998")
 # user = Users.find("Austinkooncey", "November21998")

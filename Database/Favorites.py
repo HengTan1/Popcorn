@@ -37,6 +37,7 @@ class favorites:
     def add_favorite(username, dict):
        connector = _sqlite3.connect("favorites.db")
        c = connector.cursor()
+       dict = favorites.clean_String(dict)
        c.execute(
           "INSERT INTO favorites VALUES ('" + username + "', '" + dict["Title"] + "', '" + dict["Year"] + "', '" + dict[
              "Rated"] + "', '" + dict["Released"] + "', '" + dict["Runtime"] + "', '" + dict["Genre"] + "', '" + dict[
@@ -63,6 +64,17 @@ class favorites:
        print(str(arr))
        connector.commit()
        connector.close()
+
+    def clean_String(dict):
+       arr_length = len(dict)
+       new_strs = []
+       for i in range(arr_length):
+          for string in dict:
+             new_str = string.replace("'", "''")
+             new_strs.append(new_str)
+       print(new_strs)
+      
+
 
 thisdict1 = {
    "Title": "Scream",
@@ -122,8 +134,11 @@ thisdict2 = {
 # fav = favorites.create_table()
 # fav = favorites.add_favorite("DillonKooncey", thisdict1)
 # fav = favorites.get_all_entries()
-fav2 = favorites.add_favorite("DillonKooncey", thisdict2)
-fav = favorites.delete_all_entries("DillonKooncey")
-fav2 = favorites.get_all_entries()
+# fav2 = favorites.add_favorite("DillonKooncey", thisdict2)
+# fav = favorites.delete_all_entries("DillonKooncey")
+# fav2 = favorites.get_all_entries()
+
+# clean strings method test
+# fav = favorites.clean_String(thisdict2)
 
 

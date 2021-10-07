@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Popcorn</title>
+
+    <link rel="stylesheet" href="static/css/login.css"/>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="login-section">
+        <h1>
+          Welcome to Popcorn
+        </h1>
+        <form action="" method="POST">
+          <div class="form-wrapper">
+            <div class="form-input">
+              <p>Username</p>
+              <input type="text" placeholder="Username" name="username" value="{{request.form.username}}" />
+
+            <div class="form-input">
+              <p>Password</p>
+              <input
+                type="password"
+                minlength="8"
+                placeholder="Password"
+                name="password"
+                value="{{request.form.password}}"
+                required
+              />
+              <button type="button" class="question-mark">?</button>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <button type="submit" class="btn">Login</button>
+            <a href="#" class="btn">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -2,10 +2,6 @@ import _sqlite3
 
 
 class users:
-
-    connector = _sqlite3.connect("users.db")
-    c = connector.cursor()
-
     def create_table():
         connector = _sqlite3.connect("users.db")
         c = connector.cursor()
@@ -87,17 +83,9 @@ class users:
         print(c.fetchall())
         connector.close()
 
-    # create_table()
-    # user = insert("Lewi", "12345678")
-    # user = insert("Test", "12345678")
-    # user = find("Lewi", "12345678")
-    # user = find("Asdf", "12345678")
-    delete("Test")
-    user = get_all()
-
-# A series of test I ran just to make sure everything worked. Does not include everything i did.
-# create_table()
-# user = Users.insert("DillonKooncey", "November21998")
+    # A series of test I ran just to make sure everything worked. Does not include everything i did.
+    create_table()
+# user = users.insert("DillonKooncey", "November21998")
 # user = Users.find("DillonKooncey", "November21998")
 # user = Users.find("Austinkooncey", "November21998")
 # user = Users.update_username("DillonKooncey", "Dillonkooncey")
@@ -105,6 +93,5 @@ class users:
 # user = Users.update_password("DillonKooncey", "November21998")
 # update_password("Austinkooncey", "Blah")
 # delete("DillonKooncey")
-# user = Users.get_all()
-
-
+user = users.insert("Lewi", "12345678")
+user = users.get_all()

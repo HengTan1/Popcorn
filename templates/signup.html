@@ -1,0 +1,19 @@
+<!-- {% extends 'base.html' %} -->
+<html></html>
+
+<!-- {% block content %} -->
+    <h1>Popcorn</h1>
+    <div class="form">
+        <form action="" method="post">
+          <input type="text" placeholder="Username" name="username" value="{{
+            request.form.username }}">
+           <input type="password" placeholder="Password" name="password" value="{{
+            request.form.password }}">
+          <input class="btn btn-default" type="submit" value="Sign Up">
+        </form>
+        <!-- {% if error %} -->
+          <p class="error">Error: {{ error }}
+        <!-- {% endif %} -->
+      </div>
+<!-- {% endblock %} -->
+</html>

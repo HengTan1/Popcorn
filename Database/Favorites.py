@@ -37,7 +37,6 @@ class favorites:
     def add_favorite(username, dict):
        connector = _sqlite3.connect("favorites.db")
        c = connector.cursor()
-       dict = favorites.clean_String(dict)
        c.execute(
           "INSERT INTO favorites VALUES ('" + username + "', '" + dict["Title"] + "', '" + dict["Year"] + "', '" + dict[
              "Rated"] + "', '" + dict["Released"] + "', '" + dict["Runtime"] + "', '" + dict["Genre"] + "', '" + dict[
@@ -65,14 +64,196 @@ class favorites:
        connector.commit()
        connector.close()
 
-    def clean_String(dict):
-       arr_length = len(dict)
-       new_strs = []
-       for i in range(arr_length):
-          for string in dict:
-             new_str = string.replace("'", "''")
-             new_strs.append(new_str)
-       print(new_strs)
+   #  def get_from_user(username, attr):
+   #     connector = _sqlite3.connect("favorites.db")
+   #     c = connector.cursor("SELECT ")
+   #     c.execute("SELECT ")
+
+    def get_genre_from_user(username):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Genre FROM favorites WHERE Username LIKE '" + username + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_genre_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Genre FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+       
+    def get_director_from_user(username):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Director FROM favorites WHERE Username LIKE '" + username + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_director_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Director FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_actors_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Actors FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+       
+    def get_title_from_user(username):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Title FROM favorites WHERE Username LIKE '" + username + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_writer_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Writer FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_language_from_user(username):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Language FROM favorites WHERE Username LIKE '" + username + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_language_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Language FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_country_from_user(username):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Country FROM favorites WHERE Username LIKE '" + username + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_country_from_movie(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Country FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_awards(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Awards FROM favorites WHERE Title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(str(arr))
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_view_count(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT COUNT(Username) FROM favorites WHERE title LIKE '" + title + "'")
+       arr = c.fetchone()[0]
+       print(arr)
+       connector.commit()
+       connector.close()
+       return arr
+
+    def get_boxoffice(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT BoxOffice FROM favorites WHERE title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(arr)
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_production(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Production FROM favorites WHERE title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(arr)
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_plot(title):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Plot FROM favorites WHERE title LIKE '" + title + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(arr)
+       connector.commit()
+       connector.close()
+       return arr2
+
+    def get_title_from_genre(genre):
+       connector = _sqlite3.connect("favorites.db")
+       c = connector.cursor()
+       c.execute("SELECT Title FROM favorites WHERE genre LIKE '" + '%' +  genre + '%' + "'")
+       arr = c.fetchall()
+       arr2 = [row[0] for row in arr]
+       print(arr)
+       connector.commit()
+       connector.close()
+       return arr2
       
 
 
@@ -114,7 +295,7 @@ thisdict2 = {
    "Director": "Anthony Russo, Joe Russo",
    "Writer": "Christopher Markus, Stephen McFeely, Stan Lee",
    "Actors": "Robert Downey Jr., Chris Evans, Mark Ruffalo",
-   "Plot": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'' actions and restore balance to the universe.",
+   "Plot": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.",
    "Language": "English, Japanese, Xhosa, German",
    "Country": "United States",
    "Awards": "Nominated for 1 Oscar. 70 wins & 122 nominations total",
@@ -134,11 +315,14 @@ thisdict2 = {
 # fav = favorites.create_table()
 # fav = favorites.add_favorite("DillonKooncey", thisdict1)
 # fav = favorites.get_all_entries()
-# fav2 = favorites.add_favorite("DillonKooncey", thisdict2)
+# fav = favorites.add_favorite("DillonKooncey", thisdict2)
 # fav = favorites.delete_all_entries("DillonKooncey")
-# fav2 = favorites.get_all_entries()
+# fav = favorites.get_all_entries()
+# fav = favorites.get_genre('DillonKooncey')
+# fav = favorites.get_actors('DillonKooncey')
+# fav = favorites.get_director('DillonKooncey')
+
+test = favorites.get_title_from_genre('Horror')
 
 # clean strings method test
 # fav = favorites.clean_String(thisdict2)
-
-

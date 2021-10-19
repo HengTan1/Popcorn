@@ -1,110 +1,124 @@
 #content {
-    display: flex;
-    display-direction: column;
-    margin-top: 20%;
-    margin-bottom: 20%;
-    height: 60%;
-  }
-  
-  .column-left {
-    padding-left: 150px;
-    display-direction: row;
-    margin: 1% 0;
-  }
-  
-  .column-right {
-    padding-left: 150px;
-    display-direction: row;
-    margin: 1% 0;
-  }
-  
-  .circle-btn {
-    height: 100px;
-    width: 100px;
-    display: box;
-    display: inline-box;
-    text-align: center;
-    font-size: 70%;
-    border-radius: 50%;
-    border: 1px solid black;
-  }
-  
-  .circle-container {
-    background-color: transparent;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    border: 1px solid black;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .search-input {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .search-btn {
-    margin-left: 5px;
-    margin-top: 10px;
-  }
-  
-  p {
-    text-align: center;
-  }
-  
-  .contact-wrapper {
-    display: flex;
-    padding-left: 40px;
-    padding-right: 80px;
-    display-direction: row;
-  }
-  
-  .cntct-img {
-    display: flex;
-    max-width: 25%;
-    padding: 5px;
-  }
-  
-  .login-btn-position {
-    margin-left: 110px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    margin-top: -50px;
-  }
-  
-  .top-hit-btn-position {
-    margin-left: 50px;
-    margin-right: 25px;
-    margin-bottom: 20px;
-    margin-top: 50px;
-  }
-  
-  .worst-btn-position {
-    margin-left: 110px;
-    margin-right: 10px;
-    margin-top: 50px;
-  }
-  
-  .west-btn-position {
-    margin-right: 110px;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    margin-top: -50px;
-  }
-  
-  .east-btn-position {
-    margin-left: 50px;
-    margin-right: 25px;
-    margin-bottom: 20px;
-    margin-top: 50px;
-  }
-  
-  .rand-btn-position {
-    margin-right: 110px;
-    margin-left: 10px;
-    margin-top: 50px;
-  }
-  
+  display: flex;
+  align-items: center;
+  margin: 15% 25% 10% 25%;
+}
+
+.column-left {
+  padding-left: 150px;
+  margin: 1% 0;
+}
+
+.column-mid {
+  padding: auto;
+}
+
+.column-right {
+  padding-left: 150px;
+  margin: 1% 0;
+}
+
+.circle-btn {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: #ADD8E6;
+}
+
+.circle-container {
+  background-color: #ADD8E6;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+  background-color: #eacda3;
+  background-image: linear-gradient(45deg, #eacda3, #d6ae7b);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.search-input {
+  width: 100%;
+  text-align: center;
+}
+
+.search-btn {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  padding-left: 40px;
+  padding-right: 80px;
+}
+
+.cntct-img {
+  display: flex;
+  max-width: 25%;
+  padding: 5px;
+}
+
+.login-btn-position {
+  margin-left: 110px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-top: -50px;
+}
+
+.top-hit-btn-position {
+  margin-left: 50px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.worst-btn-position {
+  margin-left: 110px;
+  margin-right: 10px;
+  margin-top: 50px;
+}
+
+.west-btn-position {
+  margin-right: 110px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: -50px;
+}
+
+.east-btn-position {
+  margin-left: 50px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.rand-btn-position {
+  margin-right: 110px;
+  margin-left: 10px;
+  margin-top: 50px;
+}
+
+body {
+  background: url("https://wallpaperaccess.com/full/473151.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+button {
+  border: 1px solid black;
+}

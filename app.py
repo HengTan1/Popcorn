@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, request
 from flask import session
 from flask import redirect
 from werkzeug.utils import html
+import sqlite3
 import popcorn_api
 #from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_manager

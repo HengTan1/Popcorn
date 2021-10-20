@@ -3,12 +3,12 @@ from flask import Flask, render_template, url_for, request
 from flask import session
 from flask import redirect
 from werkzeug.utils import html
-import sqlite3
 import popcorn_api
 #from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_manager
 from sqlalchemy import create_engine
 from flask import g
+import sqlite3
 
 app = Flask (__name__)
 app.secret_key = 'secretkey'
@@ -112,6 +112,8 @@ def signup():
         # session['user.id'] = create_user.id
         return (redirect(url_for('login')))
     return render_template('signup.html')
+
+app.debug = True
 app.run()
 
 #Should just need to do "flask run" in cmd to get this to run on local host "127.0.0.1:5000"

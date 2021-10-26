@@ -96,7 +96,7 @@ class users:
 # A series of test I ran just to make sure everything worked. Does not include everything i did.
 # user = users.create_table()
 
-# user = users.insert("DillonKooncey", "November21998")
+# user = users.insert("Lewi", "asdfasdf")
 # user = users.find("DillonKooncey", "November21998")
 # user = users.find("Austinkooncey", "November21998")
 # user = users.update_username("DillonKooncey", "Dillonkooncey")

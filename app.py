@@ -46,14 +46,14 @@ def before_request():
 #Checking if username is in list. Need to check for unique when user is created.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    from Database import Users
+    from Database.Users import users
     r = ""
     if request.method == 'POST':
         session.pop('user_id', None)
 
         username = request.form['username']
         password = request.form['password']
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("Database/users.db")
         c = conn.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'")
         r = c.fetchall()

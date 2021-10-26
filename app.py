@@ -3,12 +3,12 @@ from flask import Flask, render_template, url_for, request
 from flask import session
 from flask import redirect
 from werkzeug.utils import html
-import sqlite3
 import popcorn_api
 #from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_manager
 from sqlalchemy import create_engine
 from flask import g
+import sqlite3
 
 app = Flask (__name__)
 app.secret_key = 'secretkey'
@@ -46,20 +46,35 @@ def before_request():
 #Checking if username is in list. Need to check for unique when user is created.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    from Database import Users
+    r = ""
     if request.method == 'POST':
         session.pop('user_id', None)
 
         username = request.form['username']
         password = request.form['password']
-        
-        user = [x for x in users if x.username == username][0]
-        if user and user.password == password:
-            session['user_id'] = user.id
-            return redirect(url_for('profile'))
-
-        return redirect(url_for('login'))
-
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        c.execute("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'")
+        r = c.fetchall()
+        for i in r:
+            if (username == i[0] and password == i[1]):
+                session["loggedin"] = True
+                session["username"] = username
+                return redirect(url_for("test"))
+            else:
+                errorMsg = "Username or password is incorrect."
+            
     return render_template('login.html')
+
+@app.route("/test")
+def test():
+    return render_template('test.html')
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
 
 @app.route('/profile')
 def profile():
@@ -70,15 +85,35 @@ def profile():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    from Database.Users import users
     session.pop('user_id', None)
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         #Would add user to DB here. create_user is a test user.
-        create_user = User(id=4, username=username, password=password)
-        session['user.id'] = create_user.id
+        
+        # Using Users method
+        user = users.insert(username, password)
+        
+        # DB code
+        # conn = sqlite3.connect("users.db")
+        # c = conn.cursor()
+        # c.execute("SELECT * FROM users WHERE username = '" + username + "'")
+        # if(c.fetchone()):
+        #     print("User already exists")
+        #     conn.close()
+        # else:
+        #     c.execute("INSERT INTO users VALUES ('" + username + "', '" + password + "')")
+        #     print("Username " + username + " added")
+        #     conn.commit()
+        #     conn.close()
+        
+        # create_user = User(id=4, username=username, password=password)
+        # session['user.id'] = create_user.id
         return (redirect(url_for('login')))
     return render_template('signup.html')
+
+app.debug = True
 app.run()
 
 #Should just need to do "flask run" in cmd to get this to run on local host "127.0.0.1:5000"

@@ -2,7 +2,7 @@ import _sqlite3
 
 class favorites:
     def create_table():
-        connector = _sqlite3.connect("favorites.db")
+        connector = _sqlite3.connect("Database/favorites.db")
         c = connector.cursor()
         c.execute("""CREATE TABLE IF NOT EXISTS favorites (
          Username text,
@@ -35,7 +35,7 @@ class favorites:
         connector.close()
 
     def add_favorite(username, dict):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute(
           "INSERT INTO favorites VALUES ('" + username + "', '" + dict["Title"] + "', '" + dict["Year"] + "', '" + dict[
@@ -49,14 +49,14 @@ class favorites:
        connector.close()
 
     def delete_all_entries(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("DELETE FROM favorites WHERE username = '" + username + "'")
        connector.commit()
        connector.close()
 
     def get_all_entries():
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT * FROM favorites")
        arr = c.fetchall()
@@ -65,7 +65,7 @@ class favorites:
        connector.close()
 
     def get_from_user(username, attr):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT ? FROM favorites WHERE Username LIKE ?", (attr, username,))
        arr = c.fetchall()
@@ -76,7 +76,7 @@ class favorites:
        return arr2
 
     def get_genre_from_user(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Genre FROM favorites WHERE Username LIKE ?", (username,))
        arr = c.fetchall()
@@ -87,7 +87,7 @@ class favorites:
        return arr2
 
     def get_genre_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Genre FROM favorites WHERE Title LIKE ?", (title,))
        arr = c.fetchall()
@@ -98,7 +98,7 @@ class favorites:
        return arr2
        
     def get_director_from_user(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Director FROM favorites WHERE Username LIKE ?", (username,))
        arr = c.fetchall()
@@ -109,7 +109,7 @@ class favorites:
        return arr2
 
     def get_director_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Director FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -120,7 +120,7 @@ class favorites:
        return arr2
 
     def get_actors_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Actors FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -131,7 +131,7 @@ class favorites:
        return arr2
        
     def get_title_from_user(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Title FROM favorites WHERE Username LIKE '" + username + "'")
        arr = c.fetchall()
@@ -142,7 +142,7 @@ class favorites:
        return arr2
 
     def get_writer_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Writer FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -153,7 +153,7 @@ class favorites:
        return arr2
 
     def get_language_from_user(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Language FROM favorites WHERE Username LIKE '" + username + "'")
        arr = c.fetchall()
@@ -164,7 +164,7 @@ class favorites:
        return arr2
 
     def get_language_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Language FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -175,7 +175,7 @@ class favorites:
        return arr2
 
     def get_country_from_user(username):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Country FROM favorites WHERE Username LIKE '" + username + "'")
        arr = c.fetchall()
@@ -186,7 +186,7 @@ class favorites:
        return arr2
 
     def get_country_from_movie(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Country FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -197,7 +197,7 @@ class favorites:
        return arr2
 
     def get_awards(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Awards FROM favorites WHERE Title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -208,7 +208,7 @@ class favorites:
        return arr2
 
     def get_view_count(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT COUNT(Username) FROM favorites WHERE title LIKE '" + title + "'")
        arr = c.fetchone()[0]
@@ -218,7 +218,7 @@ class favorites:
        return arr
 
     def get_boxoffice(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT BoxOffice FROM favorites WHERE title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -229,7 +229,7 @@ class favorites:
        return arr2
 
     def get_production(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Production FROM favorites WHERE title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -240,7 +240,7 @@ class favorites:
        return arr2
 
     def get_plot(title):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Plot FROM favorites WHERE title LIKE '" + title + "'")
        arr = c.fetchall()
@@ -251,7 +251,7 @@ class favorites:
        return arr2
 
     def get_title_from_genre(genre):
-       connector = _sqlite3.connect("favorites.db")
+       connector = _sqlite3.connect("Database/favorites.db")
        c = connector.cursor()
        c.execute("SELECT Title FROM favorites WHERE genre LIKE '" + '%' +  genre + '%' + "'")
        arr = c.fetchall()

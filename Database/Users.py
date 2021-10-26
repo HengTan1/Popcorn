@@ -3,7 +3,7 @@ import _sqlite3
 
 class users:
     def create_table():
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("""CREATE TABLE users (
             username text,
@@ -13,7 +13,7 @@ class users:
         connector.close()
 
     def insert(username, password):
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + username + "'")
         if(c.fetchone()):
@@ -29,7 +29,7 @@ class users:
 
 
     def find(username, password):
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'")
         if(c.fetchone()):
@@ -42,7 +42,7 @@ class users:
             return False
 
     def update_username(old_username, new_username):
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + new_username + "'")
         if(c.fetchone()):
@@ -57,7 +57,7 @@ class users:
             return True
 
     def update_password(username, new_password):
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + username + "'")
         if(c.fetchone()):
@@ -72,7 +72,7 @@ class users:
             return False
 
     def delete(username):
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users WHERE username = '" + username + "'")
         if(c.fetchone()):
@@ -87,7 +87,7 @@ class users:
             return False
 
     def get_all():
-        connector = _sqlite3.connect("users.db")
+        connector = _sqlite3.connect("Database/users.db")
         c = connector.cursor()
         c.execute("SELECT * FROM users")
         listofUsers = {}

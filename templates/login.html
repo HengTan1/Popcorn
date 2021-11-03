@@ -6,7 +6,7 @@
     
     <title>Popcorn</title>
 
-    <link rel="stylesheet" href="static/css/login.css"/>
+    <link rel="stylesheet" href="static\css/login.css"/>
   </head>
 
   <body>
@@ -19,7 +19,7 @@
           <div class="form-wrapper">
             <div class="form-input">
               <p>Username</p>
-              <input type="text" placeholder="Username" name="username" value="{{request.form.username}}" />
+              <input type="text" placeholder="Username" name="username" value="" />
             </div>
             <div class="form-input">
               <p>Password</p>
@@ -28,7 +28,6 @@
                 minlength="8"
                 placeholder="Password"
                 name="password"
-                value="{{request.form.password}}"
                 required
               />
               <button type="button" class="question-mark">?</button>

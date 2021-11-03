@@ -1,0 +1,136 @@
+:root {
+  --clr-neon: hsl(33,100%,50%);
+  --clr-bg: hsl(0,0%,0%);
+  --clr-border: hsl(60,100%,50%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.logo-btn {
+  color: var(--clr-neon);
+  
+  font-size: 4rem;
+  
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  padding: .2em .1em;
+  
+  text-shadow: 
+    0 0 0.125em white,
+    0 0 .25em currentColor,
+    0 0 .5em hsl(33,100%,50%),
+    0 0 .75em hsl(60,100%,50%);
+}
+
+.logo-btn:hover,
+.logo-btn:focus {
+  color: var(--clr-neon);
+  text-shadow: 
+    0 0 0.125em white,
+    0 0 .25em currentColor,
+    0 0 .5em hsl(33,100%,50%),
+    0 0 .75em hsl(33,100%,50%),
+    0 0 1em hsl(60,100%,50%),
+    0 0 1.25m hsl(60,100%,50%);
+}
+
+.logo-container {
+  margin-top: 0;
+}
+
+.carousel {
+  position: relative;
+  height: 800px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel_img {
+  width: 100%;
+  height: 95%;
+  object-fit: fill;
+}
+
+.carousel_track-container {
+  height: 100%;
+  position: relative;
+  overflow: scroll;
+}
+
+.text-info, .text-info-r {
+  display: flex;
+  align-items: center;
+  justify-content: bottom;
+}
+
+.fav-btn {
+  position: absolute;
+}
+
+.carousel_track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
+}
+
+.carousel_slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel_btn {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel_btn--left {
+  left: -50px;
+}
+
+.carousel_btn--right  {
+  right: -50px;
+}
+
+.carousel_nav {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.carousel_dot {
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0,0,0,.5);
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.carousel_dot.current-slide {
+    background: rgba(0,0,0,.80);
+}
+
+.is-hidden {
+  display: none;
+}

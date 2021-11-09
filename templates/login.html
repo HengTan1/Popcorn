@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
     <title>Popcorn</title>
 
-    <link rel="stylesheet" href="static\css/login.css"/>
-  </head>
+    <link rel="stylesheet" href="static/css/login.css" />
+</head>
 
-  <body>
+<body>
     <div class="content">
-      <div class="login-section">
-        <h1>
-          Welcome to Popcorn
-        </h1>
-        <form action="" method="POST">
-          <div class="form-wrapper">
-            <div class="form-input">
-              <p>Username</p>
-              <input type="text" placeholder="Username" name="username" value="" />
-            </div>
-            <div class="form-input">
-              <p>Password</p>
-              <input
-                type="password"
-                minlength="8"
-                placeholder="Password"
-                name="password"
-                required
-              />
-              <button type="button" class="question-mark">?</button>
-            </div>
-          </div>
-          <div class="button-wrapper">
-            <button type="submit" class="btn">Login</button>
-            <a href="/signup" class="btn">Sign Up</a>
-          </div>
-        </form>
-      </div>
+        <div class="login-section">
+            <h1>
+                Welcome to Popcorn
+            </h1>
+            <form action="/login.py">
+                <div class="form-wrapper">
+                    <div class="form-input">
+                        <p>Username</p>
+                        <input type="text" placeholder="username" />
+                    </div>
+
+                    <div class="form-input">
+                        <p>Password</p>
+                        <input type="password"
+                               minlength="8"
+                               placeholder="password"
+                               required />
+                        <button type="button" class="question-mark">?</button>
+                        <div id="help-detail-box">
+                            <p>Contains both uppercase and lowercase characters (e.g., a-z and A-Z).</p>
+                            <p>Contains digits and punctuation characters (e.g., 0-9 and !@#$%^&*).</p>
+                            <p>Is at least 8-15 alphanumeric characters long and is a passphrase (e.g., "Ohmy1stubbedmyt0e").</p>
+                            <p>Is not a single word in any language, slang, dialect or jargon (e.g., "password" or "Fluffy").</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="button-wrapper">
+                    <button type="submit" class="btn">Login</button>
+                    <a href="#" class="btn">Sign Up</a>
+                </div>
+            </form>
+        </div>
     </div>
-  </body>
+
+    <script src="fittext.js"></script>
+    <script>
+        window.fitText( document.getElementById("help-detail-box") );
+      </script>
+</body>
 
 </html>

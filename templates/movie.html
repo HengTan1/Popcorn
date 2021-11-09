@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Movies</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/movie.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
+    <div class="container" id="blur">
     <div class="logo-container">
       <a href="index.html" class="logo-btn">popcorn</a>
     </div>
@@ -20,54 +22,47 @@
       
       <div class="carousel_track-container">
         <ul class="carousel_track">
-          <li class="carousel_slide">
+          <li class="carousel_slide current-slide">
             <div class="info-holder">
-                <a>
-                    <img class="carousel_img current-slide" src="https://www.ucreative.com/wp-content/uploads/2009/11/this_is_it.jpg" />
-                    </a>
-                    <div class"text-info" >Movie Name</div>
-                    <div class"text-info-r" >Rating</div>
-                    <button class="fav-btn">Favorite</button> 
+                <img class="carousel_img" onclick="toggle()" src="https://m.media-amazon.com/images/M/MV5BZjgwZDIwY2MtNGZlNy00NGRlLWFmNTgtOTBkZThjMDUwMGJhXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg" />
+                <div class="text-info" >Last Night In Soho</div>
+                <div class="text-info-r" >Rating: 7.6 / 10</div>
+                <a href="#"  class="extend" onclick="toggle()">Extend</a>
             </div>
           </li>
           <li class="carousel_slide">
               <div class="info-holder">
-                <a>
-                    <img class="carousel_img" src="http://3.bp.blogspot.com/-NG_gYC_v8P4/Td-0SYxMZ9I/AAAAAAAAAA4/0aacC9CQ0tI/s1600/Final-Avatar-Poster-8-12-09-kc.jpg" />
-                  </a>
-                  <div class"text-info" >Movie Name</div>
-                  <div class"text-info-r" >Rating</div>
-                  <button class="fav-btn">Favorite</button> 
+                <img class="carousel_img" src="http://3.bp.blogspot.com/-NG_gYC_v8P4/Td-0SYxMZ9I/AAAAAAAAAA4/0aacC9CQ0tI/s1600/Final-Avatar-Poster-8-12-09-kc.jpg" />
+                <div class="text-info" >Movie Name</div>
+                <div class="text-info-r" >Rating</div>
+                <a href="#" class="extend" onclick="toggle()">Extend</a>
               </div>
           </li>
           <li class="carousel_slide">
               <div class="info-holder">
-                <a>
-                    <img class="carousel_img" src="https://m.media-amazon.com/images/I/61Fm+N+NncL._AC_SL1008_.jpg" style="width:100%" />
-                  </a>
-                  <div class"text-info" >Movie Name</div>
-                  <div class"text-info-r" >Rating</div>
-                  <button class="fav-btn">Favorite</button> 
+                <img class="carousel_img" src="https://m.media-amazon.com/images/I/61Fm+N+NncL._AC_SL1008_.jpg" style="width:100%" />
+                <div class="text-info" >Movie Name</div>
+                <div class="text-info-r" >Rating</div>
+                <a href="#"  class="extend" onclick="toggle()">Extend</a>
+                <div class="detail hidden">
+                      <div class="movie-description"></div>
+                </div>
               </div>
           </li>
           <li class="carousel_slide">
            <div class="info-holder">
-            <a>
-                <img class="carousel_img" src="https://cdn.ebaumsworld.com/mediaFiles/picture/1810483/81799958.jpg" />
-              </a>
-              <div class"text-info" >Movie Name</div>
-              <div class"text-info-r" >Rating</div>
-              <button class="fav-btn">Favorite</button> 
+            <img class="carousel_img" src="https://cdn.ebaumsworld.com/mediaFiles/picture/1810483/81799958.jpg" />
+            <div class="text-info" >Movie Name</div>
+            <div class="text-info-r" >Rating</div>
+            <a href="#" class="extend" onclick="toggle(this)">Extend</a>
            </div>
           </li>
           <li class="carousel_slide">
            <div class="info-holder">
-            <a>
-                <img class="carousel_img" src="https://media.harrypotterfanzone.com/prisoner-of-azkaban-theatrical-poster-3.jpg" />
-              </a>
-              <div class"text-info" >Movie Name</div>
-              <div class"text-info-r" >Rating</div>
-              <button class="fav-btn">Favorite</button> 
+            <img class="carousel_img" src="https://media.harrypotterfanzone.com/prisoner-of-azkaban-theatrical-poster-3.jpg" />
+            <div class="text-info" >Movie Name</div>
+            <div class="text-info-r" >Rating</div>
+            <a href="#"  class="extend" onclick="toggle()">Extend</a>
            </div>
           </li>
         </ul>
@@ -76,7 +71,7 @@
       <button class="carousel_btn carousel_btn--right">
         &#10095 
       </button>
-   
+
       <div class="carousel_nav">
         <button class="carousel_dot current-slide"></button>
         <button class="carousel_dot"></button>
@@ -85,6 +80,67 @@
         <button class="carousel_dot"></button>
       </div>
     </div>
-    <script src="script/script.js"></script>  
+  </div>
+
+  <div id="popup">
+    <h2 class="movie_name">Last Night In Soho</h2>
+    <iframe class="trailer" src="https://www.youtube.com/embed/AcVnFrxjPjI">
+    </iframe>
+    <p class="movie_description"><strong>Movie description: </strong>An aspiring fashion designer is mysteriously able to enter the 1960s where she encounters a dazzling wannabe singer. But the glamour is not all it appears to be and the dreams of the past start to crack and splinter into something darker.</p>
+    <div>
+      <p><strong>Director: </strong> 
+        <a href='https://www.google.com/search?q=Edgar+Wright'target="_blank">
+          <button class="movie_director">
+            Edgar Wright 
+          </button>
+        </a>
+      </p>
+    </div>
+    <div>
+      <p><strong>Actor/Actress: </strong> 
+        <a href='https://www.google.com/search?q=Thomasin+McKenzie' target="_blank">
+          <button class="movie_cast">
+            Thomasin McKenzie
+          </button>
+        </a>
+        <a href='https://www.google.com/search?q=Anya+Taylor+Joy'target="_blank">
+          <button class="movie_cast">
+            Anya Taylor-Joy
+          </button>
+        </a>
+        <a href='https://www.google.com/search?q=Matt+Smith'target="_blank">
+          <button class="movie_cast">
+            Matt Smith
+          </button>
+        </a>
+      </p>
+    </div>
+    <p><strong>Accessibility: </strong> TBA <a href="#"></a></p>
+    <button class="fav_btn" onclick="favorite()">Favorite &#8902</button> 
+    <button class="close_btn" onclick="toggle()">&#8592</button>
+  </div>
+
+    <script src="script/movie.js"></script>  
+
+    
+    <!-- template for loading items info -->
+    <script >
+       var li_template = 
+       '<li class="carousel_slide">' +
+              '<div class="info-holder">'+
+                '<img class="carousel_img" src="" style="width:100%" />' +
+                '<div class="text-info" ></div>' +
+                '<div class="text-info-r" ></div>' +
+                '<a href="#"  class="extend" onclick="toggle()">Extend</a>' +
+                '<div class="detail hidden">' +
+                '      <div class="movie-name"></div>' +
+                '      <div class="movie-description"></div>' +
+                '      <div class="movie-trailer-url"></div>' +
+                '      <div class="movie-director"></div>' +
+                '      <div class="movie-cast"></div>' +
+                '</div> ' + 
+              '</div>' +
+          '</li>';
+    </script>
   </body>
 </html>

@@ -1,100 +1,136 @@
 body {
-    background: url("https://wallpaperaccess.com/full/1773903.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-  }
+  background: url("https://wallpaperaccess.com/full/1773903.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+form {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Comic Sans", cursive;
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  color: black;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px 20px;
+  line-height: 2;
+}
+
+h1 {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  font-family: "Comic Sans", cursive;
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#help-detail-box {
+  display: none;
   
-  form {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Comic Sans", cursive;
-    color: yellow;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  button {
-    color: black;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px 20px;
-    line-height: 2;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 50px;
-    font-weight: 400;
-    text-align: center;
-    font-family: "Comic Sans", cursive;
-    background-color: #f3ec78;
-    background-image: linear-gradient(45deg, #f3ec78, #af4261);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  }
-  
-  .form-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-input {
-    display: flex;
-    flex-direction: row;
-    padding: 2px;
-  }
-  
+  min-width: 350px;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 25px;
+  border: solid 2px #000;
+  background: rgb(75, 72, 72);
+  opacity: 0.8;
+
+  color: #fff;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+
+  position: absolute;
+  left: 103%;
+  bottom: -180%;
+}
+
+#help-detail-box p {
+  margin-left: 10px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
   .form-input p {
-    min-width: 100px;
-    margin: 0;
+      min-width: 100px;
+      margin: 0;
   }
-  
+
   .form-input input {
-    outline: none;
-    border: none;
-    border-radius: 5px; 
-    padding: 0 10px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      padding: 0 10px;
+      max-height: 36px;
   }
-  
+
   .form-input .question-mark {
-    margin-left: 10px;
-    width: 36px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
+      max-height: 36px;
+      margin-left: 10px;
+      width: 36px;
+      border-radius: 50%;
+      outline: none;
+      border: solid 1px #000;
   }
   
-  .button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .btn {
-    padding: 7px 20px;
-    background: white;
-    border-radius: 5px;
-    border:none;
-    outline: none;
-    text-decoration-line: none;
-    color: black;
-    font-size: 14px;
-    line-height: 1.5;
-    font-family: 'Comic Sans', cursive;
-    margin: 0 20px;
-  }
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 7px 20px;
+  background: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-decoration-line: none;
+  color: black;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Comic Sans', cursive;
+  margin: 0 20px;
+}
+
+.form-input .question-mark:hover, .btn:hover {        
+  background: limegreen;
+  cursor: pointer;
+}
+
+.question-mark:hover + #help-detail-box {
+  display: block;
+}

@@ -4,16 +4,31 @@
   --clr-border: hsl(60,100%,50%);
 }
 
+*:focus {
+  outline: none;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
-  min-height: 100vh;
-  background-color: white;
+  background: url("https://wallpaperaccess.com/full/473151.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: auto;
+  height:100vh;
+  width:100%;
   font-family: "Balsamiq Sans", cursive;
+  position: relative;
 }
 
 .logo-btn {
@@ -41,8 +56,7 @@ body {
     0 0 .25em currentColor,
     0 0 .5em hsl(33,100%,50%),
     0 0 .75em hsl(33,100%,50%),
-    0 0 1em hsl(60,100%,50%),
-    0 0 1.25m hsl(60,100%,50%);
+    0 0 1em hsl(60,100%,50%);
 }
 
 .logo-container {
@@ -51,8 +65,8 @@ body {
 
 .carousel {
   position: relative;
-  height: 800px;
-  width: 80%;
+  height: 850px;
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -65,17 +79,127 @@ body {
 .carousel_track-container {
   height: 100%;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 }
 
-.text-info, .text-info-r {
-  display: flex;
-  align-items: center;
-  justify-content: bottom;
-}
-
-.fav-btn {
+#blur {
   position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#blur.active {
+  opacity: 0.7;
+  background-color: #000;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 95%;
+  padding: 55px 25px 55px 25px;
+
+  background: rgb(8,68,236);
+  background: linear-gradient(135deg, rgba(8,68,236,1) 0%, rgb(12, 38, 80) 100%);
+  display: none;
+  transition: 500ms;
+  box-shadow: 
+  0 0 0.125em white,
+  0 0 .25em currentColor,
+  0 0 .5em hsl(33,100%,50%),
+  0 0 .75em hsl(33,100%,50%),
+  0 0 1em hsl(60,100%,50%);
+}
+
+#popup.active {
+  display: block;
+  transition: 500ms;
+}
+
+.movie_name {
+  margin-left: 3%;
+  margin-top: 5%;
+}
+
+.trailer {
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  height: 50%;
+}
+
+#popup p {
+  margin-left: 3%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.close_btn {
+  position: absolute;
+  background: transparent;
+  width: 5%;
+  height: 5%;
+  left: 15px;
+  top: 15px;
+  border: var(--clr-neon);
+  border-radius: 25px;
+  padding: 5px;
+  text-decoration: none;
+  color: rgb(9, 243, 79);
+  cursor: pointer;
+  box-shadow: 
+    0 0 0.125em white,
+    0 0 .25em currentColor,
+    0 0 .5em rgb(51, 231, 6),
+    0 0 .75em rgb(9, 214, 153),
+    0 0 1em rgb(6, 168, 168);
+}
+
+.close_btn:hover, .close_btn:focus,
+.fav_btn:hover, .fav_btn:focus {
+  color: var(--clr-border);
+  box-shadow: 
+    0 0 0.125em red,
+    0 0 .25em currentColor,
+    0 0 .5em hsl(60,100%,50%),
+    0 0 .75em hsl(60,100%,50%),
+    0 0 1em hsl(60,100%,70%);
+}
+
+.fav_btn {
+  position: absolute;
+  background: transparent;
+  width: 10%;
+  height: 5%;
+  right: 15px;
+  top: 15px;
+  border: var(--clr-neon);
+  border-radius: 25px;
+  padding: 5px;
+
+  color: var(--clr-border);
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;   
+  box-shadow: 
+  0 0 0.125em white,
+  0 0 .25em currentColor,
+  0 0 .5em hsl(33,100%,50%),
+  0 0 .75em hsl(33,100%,50%),
+  0 0 1em hsl(60,100%,50%);
+}
+
+.text-info, .text-info-r, .extend {
+  display: flex;
+  justify-content: center;
+  color: var(--clr-border);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 
 .carousel_track {
@@ -96,11 +220,28 @@ body {
 
 .carousel_btn {
   position: absolute;
-  top:50%;
+  top: 45%;
   transform: translateY(-50%);
   background: transparent;
   border: 0;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  color: var(--clr-neon);
+  text-shadow: 
+    0 0 0.125em white,
+    0 0 .25em currentColor,
+    0 0 .5em hsl(33,100%,50%),
+    0 0 .75em hsl(60,100%,50%);
+}
+
+.carousel_btn:hover, 
+.carousel_btn:focus {
+  text-shadow: 
+    0 0 .25em currentColor,
+    0 0 .5em hsl(33,100%,50%),
+    0 0 .75em hsl(33,100%,50%),     
+    0 0 .75em hsl(60,100%,70%);
 }
 
 .carousel_btn--left {
@@ -126,6 +267,16 @@ body {
   margin: 0 8px;
   cursor: pointer;
 }
+
+.carousel_dot:hover,
+.carousel_dot:focus {
+  box-shadow: 
+  0 0 .25em currentColor,
+  0 0 .5em hsl(33,100%,50%),
+  0 0 .75em hsl(33,100%,50%),     
+  0 0 .75em hsl(60,100%,70%);
+}
+
 
 .carousel_dot.current-slide {
     background: rgba(0,0,0,.80);

@@ -99,7 +99,60 @@ navDots.addEventListener('click', e =>{
   revealArrowBtn(slides, prevBtn, nextBtn, targetIndex);
 })
 
-
-
-
 //on click poster popup screen blur background
+function toggle(element) {
+  // get data of specific item
+  /*
+  var parent = $(element).parent();
+  var movie_name = parent.find('.movie-name').html();
+  var movie_description = parent.find('.movie-description').html();
+  var movie_trailer_url = parent.find('.movie-trailer-url').html();
+  var movie_director = parent.find('.movie-trailer-url').html();
+  var movie_cast = parent.find('.movie-trailer-url').html();
+
+  // set data to popup
+  var popup = $('#popup');
+  popup.find('.movie_name').html(movie_description);
+  popup.find('.movie_description').html('Movie description: ' + movie_description);
+  popup.find('.trailer source').prop('src', movie_trailer_url);
+  popup.find('.movie_director').html('Director: ' + movie_director);
+  popup.find('.movie_cast').html('Actor/Actress: ' + movie_cast);
+  */
+  // toggle show popup
+  $('#blur').toggle('active');
+  $('#popup').toggle('active');
+}
+
+// call ajax onload to get data 
+
+window.document.onload = function () {
+  $.ajax({
+    url: '127.0.0.1/get-data',
+    data: {data_id: id},
+    success: function(data) {
+      //data la 1 object JSON 
+      var data = JSON.parse(data);
+
+      // data has 5 items
+      $.each(data, function (index, value) {
+        // create element (for each movies create 1 template and 1 dot)
+        $('.carousel_track').append(li_template);
+        $('.carousel_nav').append('<button class="carousel_dot"></button>');
+
+        // set data to element (the item.x x is the json attributes)
+        $('.carousel_img').prop('src', item.img_url);
+        $('.text-info').html(item.movie_name);
+        $('.text-info-r').html(item.movie_rating_point);
+        $('.movie-name').html(item.movie_name);
+        $('.movie-description').html(item.movie_description);
+        $('.movie-trailer-url').html(item.movie_trailer_url);
+        $('.movie-director').html(item.movie_director);
+        $('.movie-cast').html(item.movie_cast); 
+      });
+     
+      // set default
+      $('.carousel_nav').find('button:first-child').addClass('current-slide');
+      $('.carousel_track').find('carousel_slide:first-child').addClass('current-slide');
+    }
+  })
+}

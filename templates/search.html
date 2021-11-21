@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Search</title> 
+    <link rel="stylesheet" href="/static/css/search.css" />
+</head>
+  <body>
+    <div class="container">
+        <form class="form-wrap" action="/adv_search.py">
+        <div class="genre-check-box">
+            <p>Movie Types:</p>
+            <div class="list-genre">
+                <label><input type="checkbox"> Comedy</label>
+                <label><input type="checkbox"> Horror</label>
+                <label><input type="checkbox"> Action</label>
+                <label><input type="checkbox"> Drama</label>
+                <label><input type="checkbox"> Fantasy</label>
+                <label><input type="checkbox"> Mystery</label>
+                <label><input type="checkbox"> Romance</label>
+                <label><input type="checkbox"> Thriller</label>
+                <label><input type="checkbox"> Animated</label>
+                <label><input type="checkbox"> Adventure</label>
+                <label><input type="checkbox"> Historical</label>
+                <label><input type="checkbox"> Documentary</label>
+                <label><input type="checkbox"> Science Fiction</label>
+            </div>
+        </div>
+        <br>
+        <div class="country-check-box">
+            <p>Country:</p>
+            <label for="country">Choose a country (optional): </label>
+            <select name="country" id="country">
+                <option value="" disabled selected>-Select a country-</option>
+                <option value="us">United State</option>
+                <option value="uk">England</option>
+                <option value="russia">Russia</option>
+                <option value="vietnam">Viet Nam</option>
+                <option value="korea">Korea</option>
+                <option value="thailand">Thailand</option>
+                <option value="chinese">Chinese</option>
+                <option value="portuguese">Portuguese</option>
+                <option value="mexican">Mexican</option>
+                <option value="italy">Italy</option>
+                <option value="sweden">Sweden</option>
+                <option value="brazil">Brazil</option>
+                <option value="german">German</option>
+                <option value="france">France</option>
+                <option value="india">India</option>
+                <option value="japan">Japan</option>
+            </select>  
+        </div>
+        <br>
+        <div class="keyword-input">
+            <p>Enter a name of a movie or person: </p>
+            <label for="keyword">Keyword: </label>
+            <input type="text" id="kw" name="kw"><br>
+            <label for="year">Year of product: </label>
+            <input type="text" id="yr" name="yr"><br>
+        </div>
+        <br>
+        <div class="submit-btn">
+            <input type="submit" value="Search">
+        </div>
+        </form>
+    </div>
+  </body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
-    <section class="hero is-success is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            {{g.user.username}}'s Profile
-          </h1>
-          <h2 class="subtitle">
-            User Signed Up - {{g.user.id}}
-          </h2>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Popcorn</title>
+
+    <link rel="stylesheet" href="/static/css/login.css" />
+</head>
+
+<body>
+    <div class="content">
+        <div class="login-section">
+            <h1>
+                Welcome to Popcorn
+            </h1>
+            <form action="/login.py">
+                <div class="form-wrapper">
+                    <div class="form-input">
+                        <p>Username</p>
+                        <input type="text" placeholder="username" />
+                    </div>
+
+                    <div class="form-input">
+                        <p>Password</p>
+                        <input type="password"
+                               minlength="8"
+                               placeholder="password"
+                               required />
+                        <button type="button" class="question-mark">?</button>
+                        <div id="help-detail-box">
+                            <p>Contains both uppercase and lowercase characters (e.g., a-z and A-Z).</p>
+                            <p>Contains digits and punctuation characters (e.g., 0-9 and !@#$%^&*).</p>
+                            <p>Is at least 8-15 alphanumeric characters long and is a passphrase (e.g., "Ohmy1stubbedmyt0e").</p>
+                            <p>Is not a single word in any language, slang, dialect or jargon (e.g., "password" or "Fluffy").</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="button-wrapper">
+                    <button type="submit" class="btn">Sign Up</button>
+                </div>
+            </form>
         </div>
-      </div>
-    </section>
-  </body>
+    </div>
+
+    <script src="fittext.js"></script>
+    <script>
+        window.fitText( document.getElementById("help-detail-box") );
+      </script>
+</body>
+
 </html>

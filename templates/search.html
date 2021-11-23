@@ -11,6 +11,10 @@
         <a href="/templates/index.html" class="logo-btn">Popcorn</a>
     </div>
     <div class="container">
+        <div class="home-btn">
+            <a href="index.html" class="logo-btn">popcorn</a>
+        </div>
+
         <form class="form-wrap" action="/adv_search.py" method="POST">
         <div class="genre-check-box">
             <p>Movie Types:</p>
@@ -30,7 +34,6 @@
                 <label><input type="checkbox"> Science Fiction</label>
             </div>
         </div>
-        <br>
         <div class="country-check-box">
             <p>Country:</p>
             <label for="country">Choose a country (optional): </label>
@@ -54,17 +57,15 @@
                 <option value="japan">Japan</option>
             </select>  
         </div>
-        <br>
         <div class="keyword-input">
             <p>Enter a name of a movie or person: </p>
             <label for="keyword">Keyword: </label>
             <input type="text" id="kw" name="kw"><br>
             <label for="year">Year of product: </label>
-            <input type="text" id="yr" name="yr"><br>
+            <input type="number" id="yr" name="yr"><br>
         </div>
-        <br>
         <div class="submit-btn">
-            <input type="submit" value="Search">
+            <input class="the-submit-btn" type="submit" value="Search">
         </div>
         </form>
     </div>

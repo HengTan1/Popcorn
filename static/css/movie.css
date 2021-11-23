@@ -25,10 +25,11 @@ body {
   background-position: center center;
   background-attachment: fixed;
   margin: auto;
-  height:100vh;
+  height:98vh;
   width:100%;
   font-family: "Balsamiq Sans", cursive;
   position: relative;
+  overflow: hidden;
 }
 
 .logo-btn {
@@ -65,7 +66,7 @@ body {
 
 .carousel {
   position: relative;
-  height: 850px;
+  height: 830px;
   width: 500px;
   margin: 0 auto;
 }

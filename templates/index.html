@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Home</title>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style_update_homepage.css" />
   </head>
 
   <body>
     <div id="content">
       <div class="left-column">
         <div class="login-btn-position">
-          <button class="circle-btn" onclick="location.href='login.html'">
+          <button class="circle-btn" onclick="location.href='login'">
             Login
           </button>
         </div>
@@ -35,7 +35,7 @@
             </a>
           </div>
           <div class="search-input">
-            <form method="POST" action="/seach.py">
+            <form method="get" action="/search">
               <input
                 class="input-box"
                 type="text"

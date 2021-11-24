@@ -3,12 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Home</title>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>Home</title> 
+    <link rel="stylesheet" href="/static/css/style_update_homepage.css" />
   </head>
 
   <body>
     <div id="content">
+
+      <div class="top-page-content">
+        <button class="noti-btn" onclick="location.href='profile.html'"> 
+            <img src="https://cdn-icons-png.flaticon.com/512/860/860758.png">
+        </button>
+        <button class="profile-btn" onclick="location.href='profile.html'">  
+            <img src="https://cdn-icons.flaticon.com/png/512/2354/premium/2354573.png?token=exp=1637457446~hmac=e96224faf06e7ccd68bf48186e4aa9ea">
+        </button>
+      </div>
       <div class="left-column">
         <div class="login-btn-position">
           <button class="circle-btn" onclick="location.href='login.html'">
@@ -35,7 +44,7 @@
             </a>
           </div>
           <div class="search-input">
-            <form method="POST" action="/seach.py">
+            <form method="get" action="/seach">
               <input
                 class="input-box"
                 type="text"
@@ -50,7 +59,7 @@
           <div class="adv-search-btn-holder">
             <button
               class="adv-search-btn"
-              onclick="location.href='search.html'"
+              onclick="location.href='advance-search'"
             >
               Advance Search
             </button>

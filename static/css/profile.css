@@ -1,0 +1,143 @@
+:root {
+    --clr-neon: hsl(33, 100%, 50%);
+    --clr-border: hsl(60, 100%, 50%);
+  }
+  
+  body {
+    background: url("https://wallpaperaccess.com/full/473151.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0 auto;
+    height: 98vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  .logo-btn {
+    color: hsl(33,100%,50%);
+    font-size: 4rem;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 0 0 0.125em #FFF, 0 0 0.25em currentColor, 0 0 0.5em hsl(33, 100%, 50%), 0 0 0.75em hsl(33, 100%, 50%);
+    padding: 0.2em, 0.1em;
+  }
+  
+  .logo-btn:hover, .logo-btn:focus {
+    color: hsl(33,100%,50%);
+    text-shadow: 0 0 0.125em #FFF, 0 0 0.25em currentColor, 0 0 0.5em hsl(33, 100%, 50%), 0 0 0.75em hsl(33, 100%, 50%), 0 0 1em hsl(60, 100%, 50%);
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    margin-top: 0;
+  }
+  
+  .main-container {
+    position: relative;
+  }
+  
+  .navigation {
+    display: grid;
+    grid-template-columns: 25% 75%;      
+    padding-top: 10%;
+  }
+  
+  .submit-btn-container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    height: 120px;
+    margin-right: 5%;
+}
+.submit-btn {
+    position: absolute;
+    max-height: 55px !important;
+    border-radius: 25px;
+    top: 40%;
+}
+
+.submit-btn:hover{
+  background: var(--clr-neon);
+  cursor: pointer;
+}
+
+  .tab-container {
+    width:100%;
+    height: 97%;
+    background: #FFF;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-right: solid 5px black;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .tab.active {
+    background-color: #FFFFF0;
+  }
+  
+  .tab:hover {
+    background-color: cornflowerblue;
+    border-radius: solid 2px black;
+    box-shadow: 5px 5px 1em black;
+  }
+  
+  .tab-content {
+    display: block;
+    background-color: white;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-left: solid 3px black;
+    padding: 1em;
+  }
+  
+  .tabs {
+    display: block;
+    line-height: 5em;
+    list-style-type: none;
+    text-align:center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #imageUpload {
+    display: none;
+  }
+  
+  #profileImage {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+  }
+  
+  #profile-container {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+  }
+  
+  #profile-container img {
+      width: 100px;
+      height: 100px;
+  }
+  
+  
+  [data-tab-content] {
+    display: none;
+  }
+  
+  .active[data-tab-content] {
+    display: block;
+  }

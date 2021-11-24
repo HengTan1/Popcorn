@@ -2,23 +2,70 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <script src="/script/avatar.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/script/date.js" defer></script>
+    <script src="/script/nav.js" defer></script>
   </head>
+
   <body>
-    <section class="hero is-success is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            {{g.user.username}}'s Profile
-          </h1>
-          <h2 class="subtitle">
-            You are user number #{{g.user.id}}
-          </h2>
+      <div class="main-container">
+        <div class="logo-container">
+          <a href="index.html" class ="logo-btn">
+            Popcorn
+          </a>
         </div>
+        <div class="navigation">
+          <div class="tab-container">
+            <ul class="tabs">
+              <li data-tab-target="#gen" class="active tab">General Information</li>
+              <li data-tab-target="#security" class="tab">Security</li>
+              <li data-tab-target="#noti" class="tab">Notifications</li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div id="gen" data-tab-content class="active">
+              <h1>General Information</h1>
+              <form>
+              <label>Name: <input type="text"></label>                
+              <label>Date of Birth:<input type="date" placeholder="2003-01-01">
+              </label>                
+              <p>Avatar:</p>
+              <image id="profileImage" src="http://lorempixel.com/100/100" />
+              <input id="imageUpload" type="file"
+              name="profile_photo" placeholder="Photo" required="" capture>
+              <label>click on photo to change your profile picture</label>
+            </form>
+            </div>
+
+            <div id="security" data-tab-content>
+              <h1>Security</h1>
+              <form>
+              <label>Current Password:</label>
+              <input type="password">
+              <label>New Password:</label>
+              <input type="password">
+              <label>Confirm Password:</label>
+              <input type="password">
+            </form>
+            </div>
+
+          <div id="noti" data-tab-content>
+            <h1>Notifications</h1>
+            <form>
+            <label>Turn on notifications for your favorite movies:</label>
+            <input type="checkbox">
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="submit-btn-container">
+          <button type="submit" class="submit-btn">
+       Save Changes
+      </button>
       </div>
-    </section>
   </body>
 </html>
